@@ -112,3 +112,6 @@ mvnw.cmd
 
 /mvn/
 /mvn/**
+
+./mvn/
+./mvn/**
