@@ -31,4 +31,24 @@ public class CaptureController {
             e.printStackTrace();
         }
     }
+
+    @ResponseBody
+    @RequestMapping("/two")
+    public void uploadingImgTwo(HttpServletResponse res) {
+        String fileNm = "sample";
+        String ext = "png";
+        System.setProperty("java.awt.headless", "false");
+        try {
+            Rectangle screenRect = new Rectangle(0, 0, 0, 0);
+            for (GraphicsDevice gd : GraphicsEnvironment.getLocalGraphicsEnvironment().getScreenDevices()) {
+                screenRect = screenRect.union(gd.getDefaultConfiguration().getBounds());
+            }
+            BufferedImage image = new Robot().createScreenCapture(screenRect);
+            res.setContentType("image/" + ext);
+            res.setHeader("Content-Disposition", "inline;filename=" + fileNm);
+            ImageIO.write(image, ext, res.getOutputStream());
+        } catch (AWTException | IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
