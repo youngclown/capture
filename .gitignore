@@ -106,3 +106,6 @@ db.json
 node_modules/
 public/
 .deploy*/
+
+mvnw
+mvnw.cmd
