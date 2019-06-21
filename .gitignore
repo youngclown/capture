@@ -109,3 +109,6 @@ public/
 
 mvnw
 mvnw.cmd
+
+.mvn/
+.mvn/**
