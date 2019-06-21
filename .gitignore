@@ -111,5 +111,5 @@ mvnw
 mvnw.cmd
 
 
-.mvn/wrapper/**
+.mvn/
 .mvn/**
